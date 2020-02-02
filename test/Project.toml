@@ -1,0 +1,7 @@
+# https://julialang.github.io/Pkg.jl/v1/creating-packages/#Test-specific-dependencies-in-Julia-1.2-and-above-1
+
+[deps]
+Calculus = "49dc2e85-a5d0-5ad3-a950-438e2897f1b9"
+Optim = "429524aa-4258-5aef-a3af-852621145aeb"
+Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
