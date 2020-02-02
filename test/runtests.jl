@@ -33,3 +33,21 @@ using ToyFlaringModel: G, Gp, F, Fp, A, Ap,
     @test GatherCorners(m, k0(m), 0)[3][1] == Va(m, k0(m), 0)
     @test GatherCorners(m, k0(m), 0) isa Vector{NTuple{2,Float64}}
 end
+
+
+# cstarp(m,0)
+#
+#
+# using ToyFlaringModel: a, d, b, e
+#
+# let t = 0,
+#     x = cstar(m,t),
+#     aa = a(m,t),
+#     dd = d(m,t),
+#     bb = b(m,t),
+#     ee = e(m,t)
+#
+#     @show 3x^2 - 2(aa+bb)x + (aa*bb + dd*ee)
+#     y = (2x - (aa+dd))/(6x - 2(aa+bb))
+#     @show y, cstarp(m,t)
+# end

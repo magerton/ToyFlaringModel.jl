@@ -59,11 +59,21 @@ apb(m,t) = a(m,t)+b(m,t)
 ab( m,t) = a(m,t)*b(m,t)
 de( m,t) = d(m,t)*e(m,t)
 
-inside_sqrt(m,t) = apb(m,t)^2 - 3*(ab(m,t) + de(m,t))
-inside_sqrtp(m,t) = 2*apb(m,t) - 3*(a(m,t) + d(m,t))
-
 cstar( m,t) = (apb(m,t) - sqrt( inside_sqrt(m,t) ) )/3
-cstarp(m,t) = 1/3 - inside_sqrtp(m,t)/sqrt(inside_sqrt(m,t))/6
+inside_sqrt(m,t) = apb(m,t)^2 - 3*(ab(m,t) + de(m,t))
+
+# inside_sqrtp(m,t) = 2*apb(m,t) - 3*(a(m,t) + d(m,t))
+# cstarp(m,t) = 1/3 - inside_sqrtp(m,t)/sqrt(inside_sqrt(m,t))/6
+
+function cstarp(m,t)
+    x = cstar(m,t)
+    aa = a(m,t)
+    dd = d(m,t)
+    bb = b(m,t)
+    dxdt = (2x - (aa+dd)) / (6x - 2(aa+bb))
+    return dxdt
+end
+
 
 export Cost, Gather, Flare, AltOpt, Total
 
