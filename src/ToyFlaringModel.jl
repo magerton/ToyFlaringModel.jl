@@ -104,5 +104,12 @@ GatherShape(m,t) = Shape( GatherCorners(m, Cost(m,t), t) )
 FlareShape( m,t) = Shape( FlareCorners( m, Cost(m,t), t) )
 AltOptShape(m,t) = Shape( AltOptCorners(m, Cost(m,t), t) )
 
+center(s::Shape) = sum(s.x)/length(s.x), sum(s.y)/length(s.y)
+
+export GatherLab, FlareLab, AltOptLab
+
+GatherLab(m,t) = (center(GatherShape(m,t))..., "Gather")
+FlareLab( m,t) = (center(FlareShape( m,t))..., "Flare")
+AltOptLab(m,t) = (center(AltOptShape(m,t))..., "Alternative")
 
 end # module
