@@ -7,4 +7,4 @@ sftp-config.json
 *.gz
 *.jld2
 
-.ipynb_checkpoints/*
+**/.ipynb_checkpoints/**
